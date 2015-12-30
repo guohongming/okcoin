@@ -38,11 +38,14 @@ class OKCoinSpot(object):
             errorNum = get_code.get('errorNum')
             if resultCode == 0 and errorNum == 0:
                 print('login succeed!')
+                return 1
             else:
                 print('login failed!')
+                return 0
         except requests.RequestException as e:
             print(e)
             print('login failed!')
+            return 0
 
     def account_info(self):  # 账户信息
         trade_url = self.__url + '/trade/btc.do'
