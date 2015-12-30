@@ -1,6 +1,7 @@
 #  financing_info（）参数 空
 #  financing_info（）返回值的说明（融资融币信息）
 
+
 {
     'borrow_top_ten':    # 借款CNY深度前十名，
         {
