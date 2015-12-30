@@ -5,3 +5,5 @@ username = '********'
 password = '********'
 OKCoin_spot = OKCoinSpot(url,username,password)
 
+
+
