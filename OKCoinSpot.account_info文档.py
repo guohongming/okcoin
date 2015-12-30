@@ -1,7 +1,6 @@
 # account_info() 参数 无
 # account_info()返回值说明（账户信息）
 
-
 {
     'asset': #资产
         {
