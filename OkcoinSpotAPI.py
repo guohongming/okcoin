@@ -149,6 +149,29 @@ class OKCoinSpot(object):
         # print(financing_top_ten)
         return financing_top_ten
 
+    def trade_value(self):
+        trade_value_url = self.__url+'/trade/btc.do'
+        response = self.__session.get(trade_value_url,headers=self.__header)
+        trade_value_bs = BeautifulSoup(response.text)
+        trade_value_bs = trade_value_bs.find('ul',{'style':'padding-left:0px;'})
+        # print(trade_value_bs)
+        bannerBtcLast = trade_value_bs.find('span',{'id':'bannerBtcLast'}).get_text()
+        bannerLtcLast = trade_value_bs.find('span',{'id':'bannerLtcLast'}).get_text()
+
+        bannerBtcVol = trade_value_bs.find('span',{'id':'bannerBtcVol'}).get_text()
+        bannerLtcVol = trade_value_bs.find('span',{'id':'bannerLtcVol'}).get_text()
+
+        trade_value = {}
+        last_value = {}
+        trade_amount_24 = {}
+        last_value['bannerBtcLast'] = bannerBtcLast
+        last_value['bannerLtcLast'] = bannerLtcLast
+        trade_amount_24['bannerBtcVol'] = bannerBtcVol
+        trade_amount_24['bannerLtcVol'] = bannerLtcVol
+        trade_value['last_value'] = last_value
+        trade_value['trade_amount_24'] = trade_amount_24
+        # print(trade_value)
+        return  trade_value
 
 
 
