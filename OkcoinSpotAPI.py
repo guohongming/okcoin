@@ -154,8 +154,8 @@ class OKCoinSpot(object):
 
 if __name__ == '__main__':
     url = 'https://www.okcoin.cn'
-    username = '1006575211@qq.com'
-    password = 'guo1006575211'
+    username = '*****@qq.com'
+    password = '*******'
     OKCoin_spot = OKCoinSpot(url,username,password)
     OKCoin_spot.login()
     info = OKCoin_spot.account_info()
